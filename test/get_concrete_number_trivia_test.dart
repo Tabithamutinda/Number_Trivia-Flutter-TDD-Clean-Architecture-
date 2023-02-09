@@ -23,7 +23,7 @@ void main() {
   test('should get trivia for the number from the repository', () async {
     when(mockNumberTriviaRepository.getConcretenumberTrivia(any))
         .thenAnswer((_) async => Right(tNumberTrivia));
-    final result = await usecase.execute(number: tNumber);
+    final result = await usecase(number: tNumber);
     //usecase should simply return whatever was returned from the repository.
     expect(result, Right(tNumberTrivia));
     //verify that the method should be called and nothing more.
